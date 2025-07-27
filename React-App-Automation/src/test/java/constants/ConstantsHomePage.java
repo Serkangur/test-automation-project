@@ -13,4 +13,5 @@ public class ConstantsHomePage {
     public static By myAccount = By.xpath(".//label[contains(text(),'My account')]");
     public static By loginTittle = By.id("loginMiniTitle");
     public static By spekersImg = By.id("speakersImg");
+    public static By cartElementValue= By.xpath("(//span[@class=\"cart ng-binding\"])[2]");
 }

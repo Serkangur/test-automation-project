@@ -2,6 +2,7 @@ package tests;
 
 import base.BaseTest;
 import io.qameta.allure.Description;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 
@@ -17,6 +18,7 @@ public class ValidLoginTest extends BaseTest {
         homePage.inputUserName("serkangur");
         homePage.inputPassword("Serkan_23");
         homePage.clickToLoginButton();
+        Assert.assertEquals("serkangur",homePage.getProfileIconText(),"Login was not successful");
 
 
     }

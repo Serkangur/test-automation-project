@@ -2,9 +2,6 @@ package pages;
 
 import base.BasePage;
 import org.openqa.selenium.WebDriver;
-
-import java.util.Random;
-
 import static constants.ConstantsRegisterPage.*;
 
 

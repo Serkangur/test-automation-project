@@ -2,11 +2,11 @@ package tests;
 
 import base.BaseTest;
 import io.qameta.allure.Description;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.RegisterPage;
 
-import static base.BasePage.delay;
 
 public class CreateNewAccount extends BaseTest {
 
@@ -35,6 +35,7 @@ public class CreateNewAccount extends BaseTest {
         registerPage.inputPostalCode("23156");
         registerPage.clickToPrivacyPolicy();
         registerPage.clickToRegisterButton();
+        Assert.assertTrue(homePage.getProfileIconText().contains("user"));
 
 
     }

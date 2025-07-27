@@ -2,7 +2,6 @@ package base;
 
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -44,12 +43,10 @@ public class BasePage {
     }
 
     public void clickToWebElementWaitSvg(By locator) {
-        try {
-            WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            shortWait.until(ExpectedConditions.invisibilityOfElementLocated(loadingSpinner));
-        } catch (TimeoutException e) {
-            System.out.println("Spinner did not disappear. Continuing...");
-        }
+
+        WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        shortWait.until(ExpectedConditions.invisibilityOfElementLocated(loadingSpinner));
+
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
         element.click();
     }

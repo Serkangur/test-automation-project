@@ -9,16 +9,16 @@ import pages.HomePage;
 import pages.ProductPage;
 import pages.SpekersPage;
 
-public class EditItemTest extends BaseTest {
+public class DeleteProduct extends BaseTest {
     HomePage homePage;
     SpekersPage spekersPage;
     ProductPage productPage;
     CartPage cartPage;
 
 
-    @Description("Editing an existing item.")
+    @Description("Deleting an product.")
     @Test
-    public void editItemTest() throws InterruptedException {
+    public void deleteProduct() throws InterruptedException {
 
         homePage = new HomePage(driver);
         homePage.clickToSpekersImg();
@@ -31,15 +31,7 @@ public class EditItemTest extends BaseTest {
         productPage.clickToCartButton();
 
         cartPage = new CartPage(driver);
-        cartPage.clickToEditButton();
-        productPage.clickToPlusButton();
-        productPage.clickToAddCardtButton();
-        Assert.assertEquals(productPage.cartCount,productPage.getTextCartCount(),"Product was not added successfully.");
-
-
-
-
-
-
+        cartPage.clickToRemoveButton();
+        Assert.assertEquals("Your shopping cart is empty",cartPage.getCartEmptyMessage(),"Your shopping cart is'nt empty");
     }
 }

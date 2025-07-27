@@ -8,7 +8,6 @@ import org.openqa.selenium.interactions.Actions;
 import static constants.ConstantsHomePage.*;
 
 public class HomePage extends BasePage {
-    Actions actions = new Actions(driver);
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -40,13 +39,8 @@ public class HomePage extends BasePage {
         clickToWebElement(spekersImg);
     }
 
-    public void clickToProfileElement(){
-        clickToWebElement(getProfileIcon);
-    }
-
-    public void clickToMyAccount(){
-        find(loginTittle);
-        clickToWebElement(myAccount);
+    public String getProfileIconText(){
+        return  getTextMethod(getProfileIcon);
     }
 
 

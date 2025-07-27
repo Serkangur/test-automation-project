@@ -14,5 +14,12 @@ public class CartPage extends BasePage {
         clickToWebElement(editButton);
     }
 
+    public void clickToRemoveButton(){
+        clickToWebElement(removeButton);
+    }
+    public String getCartEmptyMessage(){
+      return getTextMethod(cartEmptyMessageText);
+    }
+
 
 }
