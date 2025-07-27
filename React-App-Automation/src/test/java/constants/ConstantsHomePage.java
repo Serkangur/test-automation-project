@@ -9,5 +9,8 @@ public class ConstantsHomePage {
     public static By userNameField = By.name("username");
     public static By passwordField = By.name("password");
     public static By signInButton= By.id("sign_in_btn");
-    public static By getProfileIconText = By.cssSelector(".hi-user.containMiniTitle.ng-binding");
+    public static By getProfileIcon = By.cssSelector(".hi-user.containMiniTitle.ng-binding");
+    public static By myAccount = By.xpath(".//label[contains(text(),'My account')]");
+    public static By loginTittle = By.id("loginMiniTitle");
+    public static By spekersImg = By.id("speakersImg");
 }

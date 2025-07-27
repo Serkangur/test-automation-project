@@ -3,10 +3,12 @@ package pages;
 import base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import static constants.ConstantsHomePage.*;
 
 public class HomePage extends BasePage {
+    Actions actions = new Actions(driver);
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -32,6 +34,19 @@ public class HomePage extends BasePage {
 
     public WebElement isDisplayedCreateButton() {
         return find(createNewAccountButton);
+    }
+
+    public void clickToSpekersImg(){
+        clickToWebElement(spekersImg);
+    }
+
+    public void clickToProfileElement(){
+        clickToWebElement(getProfileIcon);
+    }
+
+    public void clickToMyAccount(){
+        find(loginTittle);
+        clickToWebElement(myAccount);
     }
 
 
